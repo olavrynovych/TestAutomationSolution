@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Remote;
+using System;
 using System.IO;
 using System.Reflection;
 
@@ -7,10 +9,13 @@ namespace AutomationFramework
     internal class FireFoxDriverManager : DriverManager
     {
         private FirefoxDriverService service;
-        protected override void CreateDriver()
+        protected override void CreateDriver(bool remoteDriver, string remoteUrl)
         {
             var options = new FirefoxOptions();
-            driver = new FirefoxDriver(service, options);
+            if (remoteDriver)
+                driver = new RemoteWebDriver(new Uri(remoteUrl), options);
+            else
+                driver = new FirefoxDriver(service, options);
         }
 
         protected override void StartService()

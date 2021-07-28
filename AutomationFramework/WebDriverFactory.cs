@@ -18,9 +18,6 @@ namespace Tests
                 case BrowserType.Chrome:
                     Manager = new ChromeDriverManager();
                     break;
-                case BrowserType.RemoteChromeDriver:
-                    Manager = new RemoteChromeDriverManager();
-                    break;
                 case BrowserType.FireFox:
                     Manager = new FireFoxDriverManager();
                     break;

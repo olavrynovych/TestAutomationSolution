@@ -22,7 +22,7 @@ namespace SpecFlowProject.Specs.Steps
 
         public ReqAPISteps()
         {
-            url = ConfigurationManager.AppSettings["testApiUrl"];
+            url = ConfigBuilder.GetUrl("testApiUrl");
         }
         [Given(@"post request")]
         public void GivenPostRequest()

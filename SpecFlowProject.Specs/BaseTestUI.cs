@@ -1,6 +1,7 @@
 ﻿using AutomationFramework;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using SpecFlowProject.Specs;
 using System;
 using TechTalk.SpecFlow;
 namespace Tests
@@ -20,9 +21,10 @@ namespace Tests
         [BeforeScenario("Login")]
         public static void Setup()
         {
-            //Manager = WebDriverFactory.GetManager(BrowserType.Chrome);
-            Manager = WebDriverFactory.GetManager(BrowserType.RemoteChromeDriver);
-            Driver = Manager.GetDriver();
+            Manager = WebDriverFactory.GetManager(BrowserType.Chrome);
+            bool remoteDriver = ConfigBuilder.IsRemote;
+            string remoteUrl = ConfigBuilder.GetUrl("");
+            Driver = Manager.GetDriver(remoteDriver, remoteUrl);
         }
 
         [AfterScenario("Login")]

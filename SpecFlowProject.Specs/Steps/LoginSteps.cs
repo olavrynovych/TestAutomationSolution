@@ -22,7 +22,7 @@ namespace SpecFlowProject.Specs.Features
 
         public LoginSteps(ScenarioContext scenarioContext) : base(scenarioContext)
         {
-            url = ConfigurationManager.AppSettings["testUiUrl"];
+            url = ConfigBuilder.GetUrl("testUiUrl");
         }
 
         [Given(@"website")]

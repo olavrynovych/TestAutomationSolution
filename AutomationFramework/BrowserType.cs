@@ -2,6 +2,6 @@
 {
     public enum BrowserType
     {
-        Chrome, FireFox, Opera, RemoteChromeDriver
+        Chrome, FireFox, Opera
     }
 }
