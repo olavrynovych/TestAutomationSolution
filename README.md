@@ -20,3 +20,6 @@ https://medium.com/@HoussemDellai/run-selenium-ui-tests-in-docker-containers-f41
 http://www.testautomationguru.com/selenium-webdriver-design-patterns-in-test-automation-template-method-pattern/
 https://metanit.com/sharp/patterns/3.4.php
 https://github.com/NLog/NLog
+https://qavalidation.com/2020/09/demo-sites-to-practice-api-automation-testing.html/
+https://reqres.in/
+https://json2csharp.com/
