@@ -5,6 +5,7 @@ using RestSharp;
 using RestSharp.Serialization.Json;
 using System;
 using System.Configuration;
+using System.Threading.Tasks;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowProject.Specs.Steps
@@ -49,24 +50,24 @@ namespace SpecFlowProject.Specs.Steps
             this.id = id;
         }
         [When(@"post user")]
-        public void WhenPostUser()
+        public async Task WhenPostUser()
         {
             _service.AddBody(new
             {
                 name = this.name,
                 job = this.job
             });
-            response = _service.ExecuteRequest();
+            response = await _service.ExecuteRequest();
         }
         [When(@"I execute get request")]
-        public void WhenIExecuteGetRequest()
+        public async Task WhenIExecuteGetRequestAsync()
         {
-            response = _service.ExecuteRequest();
+            response = await _service.ExecuteRequest();
         }
         [When(@"I execute delete request")]
-        public void WhenIExecuteDeleteRequest()
+        public async Task WhenIExecuteDeleteRequestAsync()
         {
-            response = _service.ExecuteRequest();
+            response = await _service.ExecuteRequest();
         }
 
         [Then(@"I get correct response code (.*)")]
