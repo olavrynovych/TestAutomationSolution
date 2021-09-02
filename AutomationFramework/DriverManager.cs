@@ -5,7 +5,7 @@ namespace AutomationFramework
     public abstract class DriverManager
     {
         protected IWebDriver driver;
-        protected abstract void CreateDriver();
+        protected abstract void CreateDriver(bool remoteDriver, string remoteUrl);
         protected abstract void StartService();
         protected abstract void StopService();
 
@@ -19,12 +19,12 @@ namespace AutomationFramework
             }
         }
 
-        public IWebDriver GetDriver()
+        public IWebDriver GetDriver(bool remoteDriver, string url)
         {
             if (driver == null)
             {
                 StartService();
-                CreateDriver();
+                CreateDriver(remoteDriver, url);
             }
 
             return driver;

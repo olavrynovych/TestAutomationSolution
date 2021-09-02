@@ -1,5 +1,6 @@
 ﻿using RestSharp;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AutomationFramework
 {
@@ -34,9 +35,9 @@ namespace AutomationFramework
             Client = new RestClient(baseUrl);
         }
 
-        public IRestResponse ExecuteRequest()
+        public async Task<IRestResponse> ExecuteRequest()
         {
-            return Client.Execute(Request, method);
+            return await Client.ExecuteAsync(Request, method);
         }
 
         public override void CreateRequest(string resourse)

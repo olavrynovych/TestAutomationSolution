@@ -1,11 +1,7 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationFramework
 {
@@ -16,6 +12,7 @@ namespace AutomationFramework
             var options = new ChromeOptions();
             options.AddArgument("--disable-dev-shm-usage");
             var url = ConfigurationManager.AppSettings["dockerUrl"];
+
             driver = new RemoteWebDriver(new Uri(url), options);
         }
 

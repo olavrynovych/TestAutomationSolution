@@ -1,7 +1,4 @@
-﻿
-using System.Collections.Generic;
-
-namespace AutomationFramework
+﻿namespace AutomationFramework
 {
     public abstract class ApiService
     {
