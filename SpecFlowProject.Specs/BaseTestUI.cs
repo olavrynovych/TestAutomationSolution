@@ -21,9 +21,9 @@ namespace Tests
         [BeforeScenario("Login")]
         public static void Setup()
         {
-            Manager = WebDriverFactory.GetManager(BrowserType.Chrome);
+            Manager = WebDriverFactory.GetManager(ConfigBuilder.GetBrowser());
             bool remoteDriver = ConfigBuilder.IsRemote;
-            string remoteUrl = ConfigBuilder.GetUrl("");
+            string remoteUrl = ConfigBuilder.GetUrl("dockerUrl");
             Driver = Manager.GetDriver(remoteDriver, remoteUrl);
         }
 
