@@ -2,7 +2,7 @@
 <TestProfile xmlns="http://www.specflow.org/schemas/plus/TestProfile/1.5">
   <Settings projectName="SpecFlowProject.Specs" />
   <Execution stopAfterFailures="0" 
-             testThreadCount="Max"
+             testThreadCount="3"
              retryFor="Failing" 
              testSchedulingMode="Random"
              retryCount="2"
